@@ -1,17 +1,17 @@
-import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 public class DefinirIntervalo {
-    LocalDate inicio;
-    LocalDate fim;
+    LocalDateTime inicio;
+    LocalDateTime fim;
 
-    public void setData (LocalDate inicio, LocalDate fim) {
+    public void setData (LocalDateTime inicio, LocalDateTime fim) {
         this.inicio = inicio;
         this.fim = fim;
     }
-    public LocalDate getInicio () {
+    public LocalDateTime getInicio () {
         return this.inicio;
     }
-    public LocalDate getFim () {
+    public LocalDateTime getFim () {
         return this.fim;
     }
 }

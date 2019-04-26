@@ -1,25 +1,21 @@
-import java.date.LocalDate;
 import java.time.LocalDateTime;
 import java.util.List;
 import java.util.LinkedList;
 
 public class MarcadorDeReuniao {
+    Map<Pessoa, DefinirIntervalo> reuniao = new LinkedHashMap<Pessoa, DefinirIntervalo>();
     public void marcarReuniaoEntre (LocalDate dataInicial, LocalDate dataFinal, LinkedList<String> listaDeParticipantes) {
-        List<String> lista = new ArrayList<String> (listaDeParticipantes);
+        Reuniao novaReuniao = new Reuniao (listaDeParticipantes, dataInicial, dataFinal);
+
         
-        for (String participante : lista) {
-            java.time.LocalDate inicioPart;
-            java.time.LocalDate fimPart;
-
-            if (inicioPart.isAfter(dataInicial) && fimPart.isBefore(dataFinal)){
-                Pessoa pessoa = new Participantes ();
-            }
-
-        }
     }
 
     public void indicaDisponibilidadeDe (String participante, LocalDateTime inicio, LocalDateTime fim) {
-        
+        Pessoa pessoa = new Pessoa ();
+        pessoa.setEmail(participante);
+        pessoa.adicionaIntervalo(inicio, fim);
+        reuniao.put (pessoa.getEmail(), pessoa.getIntervalo(0));
+
     }
 
     public void mostraSobreposicao () {

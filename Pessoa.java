@@ -1,34 +1,26 @@
+import java.time.LocalDateTime;
+
 public class Pessoa {
-    String nome;
-    String email;
-    LocalDate dispInicio;
-    LocalDate dispFim;
+    private String email;
+    private List<DefinirIntervalo> intervalo = new ArrayList<DefinirIntervalo> ();
 
-    public void setDispInicio (LocalDate dispInicio) {
-        this.dispInicio = dispInicio;
-    }
-    public LocalDate getDispInicio () {
-        return this.dispInicio;
-    }
-
-    public void setDispFim (LocalDate dispFim) {
-        this.dispFim = dispFim;
-    }
-    public LocalDate getDispFim () {
-        return this.dispFim;
-    }
-
-    public void setNome (String nome) {
-        this.nome = nome;
-    }
-    public String getNome () {
-        return this.nome;
-    }
-    
     public void setEmail (String email) {
         this.email = email;
     }
     public String getEmail () {
         return this.email;
+    }
+
+    public void adicionaIntervalo (LocalDateTime dispInicio, LocalDateTime dispFim) {
+        DefinirIntervalo di = new DefinirIntervalo (dispInicio,dispFim);
+        intervalo.add(di);
+    }
+
+    public LocalDateTime getIntervalo (int i) {
+        return intervalo.get(i);
+    }
+
+    public ArrayLista<DefinirIntervalo> getArray () {
+        return this.intervalo;
     }
 }
