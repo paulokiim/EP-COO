@@ -1,7 +1,0 @@
-EP -- COO
-1- Classe Pessoa;
-2- Classe Reuniao;
-3- Data da reuniao setado pelo organizador;
-4- Pessoas setam os seus horarios disponiveis;
-5- Organizador visualiza os horarios e define o melhor;
-6- Exibe relatorios todos os participantes poderiam participar da reuniao;
