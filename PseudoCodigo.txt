@@ -19,13 +19,10 @@ class MarcadorDeReuniao {
 class Pessoa {
     email
 }
-class Intervalo {
-    inicio
-    fim
-}
 class Disponibilidade{
     participante (string)
-    Intervalo
+    inicio
+    fim
 }
 
 1. Indica em qual período ele gostaria de marcar a reunião (por exemplo, entre10 e 20 de abril);

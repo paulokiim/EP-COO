@@ -62,14 +62,20 @@ public class MarcadorDeReuniao {
         imprimeDisponibilidades(this.pessoas);
 
         criaInterseccao(this.inicioReuniao.atStartOfDay(),this.fimReuniao.atTime(23, 59) , 0);
-    
-        System.out.println ("A possiveis reunioes sao: ");
-        int n = 1;
-        for (Intervalo i : reuniao) {
-            System.out.print ("Reuniao " + n + ": " + i.getInicio().toLocalDate().toString() + " " + i.getInicio().toLocalTime().toString()); 
-            System.out.println (" ate " + i.getFim().toLocalDate().toString() + " " + i.getFim().toLocalTime().toString());
-            n++;
+        if (reuniao.isEmpty()) {
+            System.out.println ("============Nao existem reunioes possiveis!============");
         }
+        else {
+            System.out.println ("A possiveis reunioes sao: ");
+            int n = 1;
+            
+            for (Intervalo i : reuniao) {
+                System.out.print ("Reuniao " + n + ": " + i.getInicio().toLocalDate().toString() + " " + i.getInicio().toLocalTime().toString()); 
+                System.out.println (" ate " + i.getFim().toLocalDate().toString() + " " + i.getFim().toLocalTime().toString());
+                n++;
+            }
+        }
+        
     }
     
     public void criaInterseccao (LocalDateTime inicial, LocalDateTime finale, int i) {
