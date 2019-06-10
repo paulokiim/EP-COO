@@ -46,6 +46,14 @@ public class GerenciadorDeSalas {
             }
         }
         if (aux != null) {
+            for(Reserva reserva: reservas)
+			{
+				if((reserva.getSala() == aux) && (!(fim.isBefore(reserva.getInicio())||inicio.isAfter(reserva.getFim())))){
+                    System.out.println ("A sala já está reservada no horário de " + reserva.getInicio().toString() + " até " + reserva.getFim().toString() + "!");
+                    return null;
+                }
+			}
+
             Reserva nova = new Reserva(aux, inicio, fim);
             reservas.add(nova);
             return nova;
@@ -74,6 +82,19 @@ public class GerenciadorDeSalas {
     }
 
     public void imprimeReservasDaSala(Sala sala) {
-
+        int cont = 0;
+        for (Reserva reserva : reservas) {
+            if (reserva.getSala().equals(sala)) {
+                cont++;
+				System.out.println("Reserva " + cont + ":\n");
+				System.out.print("De " + reserva.getInicio().toLocalDate().toString());
+				System.out.println(" às " + reserva.getInicio().toLocalTime().toString());
+				System.out.print("Até " + reserva.getFim().toLocalDate().toString());
+				System.out.println(" às " + reserva.getFim().toLocalTime().toString() + "\n");
+            }
+        }
+        if (cont == 0) {
+            System.out.println ("Ainda nao existem reservas para essa Sala!");
+        }
     }
 }
