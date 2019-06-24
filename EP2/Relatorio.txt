@@ -64,7 +64,7 @@ Bahia
 Salas disponiveis:
 Recife Bahia 
 
-A sala já está reservada no horário de 2019-01-01T09:30 até 2019-01-01T10:30!
+Data Invalida porque ja existe uma reserva
 
 Sala Bahia:
 
