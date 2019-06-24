@@ -222,5 +222,6 @@ public class GerenciadorDeSalas {
             }
         } while (cont != 0);
         
+        sc.close();
     }
 }
