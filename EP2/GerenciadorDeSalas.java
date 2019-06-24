@@ -46,28 +46,34 @@ public class GerenciadorDeSalas {
     }
 
     public Reserva reservaSalaChamada(String nomeDaSala, LocalDateTime inicio, LocalDateTime fim) {
-        Sala aux = null;
-        for (Sala sala : salasDisponiveis) {
-            if (sala.getNome().equals(nomeDaSala)) {
-                aux = sala;
+        Reserva nova = null;
+        try {
+            Sala aux = null;
+            for (Sala sala : salasDisponiveis) {
+                if (sala.getNome().equals(nomeDaSala)) {
+                    aux = sala;
+                }
+            }
+            if (aux != null) {
+                for(Reserva reserva: reservas)
+                {
+                    if((reserva.getSala() == aux) && (!(fim.isBefore(reserva.getInicio())||inicio.isAfter(reserva.getFim()))))
+                        throw new InvalidDataException ("Data Invalida porque ja existe uma reserva");
+                }
+
+                nova = new Reserva(aux, inicio, fim);
+                reservas.add(nova);
+            }
+            else {
+                System.out.println ("Sala nao existente no conjunto de Salas!");
+                return null;
             }
         }
-        if (aux != null) {
-            for(Reserva reserva: reservas)
-			{
-				if((reserva.getSala() == aux) && (!(fim.isBefore(reserva.getInicio())||inicio.isAfter(reserva.getFim())))){
-                    System.out.println ("A sala já está reservada no horário de " + reserva.getInicio().toString() + " até " + reserva.getFim().toString() + "!");
-                    return null;
-                }
-			}
-
-            Reserva nova = new Reserva(aux, inicio, fim);
-            reservas.add(nova);
-            return nova;
+        catch (InvalidDataException ex) {
+            System.err.println(ex.getMessage());
         }
-        else {
-            System.out.println ("Sala nao existente no conjunto de Salas!");
-            return null;
+        finally {
+            return nova;
         }
 
     }

@@ -1,0 +1,205 @@
+Pedro Paulo de Sillos	10816774
+Paulo Jin Sol Kim	10724389 
+
+Exercício Programa 2 - Reserva de Salas
+
+Para compilar, você deve abrir o terminal na pasta que contém os arquivos e digitar "javac GerenciadorDeSalas.java". E depois, para executar voce deve digitar "java GerenciadorDeSalas"
+
+Os Padrões de Projeto aplicado no nosso projeto foram:
+1) Iterator -- Utilizamos esse padrão para percorrer a nossa Collection de reservas.
+2) Private Class Data -- Utilizamos na construção das classes Sala e Reserva usando getters
+
+***Entrada 1***
+
+1
+Recife
+200
+Descricao aqui
+
+1
+Bahia
+150
+Descricao vai aqui
+
+3 
+
+4
+Recife
+2019-01-01T09:30
+2019-01-01T10:30
+
+4
+Recife
+2019-01-01T10:00
+2019-01-01T11:30
+
+4
+Bahia
+2019-01-01T10:00
+2019-01-01T11:30
+
+4
+Bahia
+2019-01-01T09:00
+2019-01-01T09:30
+
+6
+
+5
+Recife
+2019-01-01T09:30
+2019-01-01T11:30
+
+5
+Recife
+2019-01-01T09:30
+2019-01-01T10:30
+
+7
+Bahia
+
+0
+
+***Saida 1***
+Salas disponiveis:
+Recife Bahia 
+
+A sala já está reservada no horário de 2019-01-01T09:30 até 2019-01-01T10:30!
+
+Sala Bahia:
+
+De 2019-01-01 às 10:00
+Até 2019-01-01 às 11:30
+
+Sala Bahia:
+
+De 2019-01-01 às 09:00
+Até 2019-01-01 às 09:30
+
+Sala Recife:
+
+De 2019-01-01 às 09:30
+Até 2019-01-01 às 10:30
+
+Sala e Horarios nao possuem reserva OU voce digitou errado!
+
+Reserva removida com sucesso!
+
+Reserva 1:
+
+De 2019-01-01 às 10:00
+Até 2019-01-01 às 11:30
+
+Reserva 2:
+
+De 2019-01-01 às 09:00
+Até 2019-01-01 às 09:30
+
+
+***Entrada 2***
+
+1
+Paris
+200
+Melhor sala
+
+1
+Hong Kong
+150
+Uma das melhores
+
+1
+Brasil
+500
+O Melhor
+
+3
+
+2
+Hong Kong
+
+3
+
+4
+Hong Kong
+2019-01-01T09:30
+2019-01-01T10:30
+
+4
+Brasil
+2019-01-01T10:30
+2019-01-01T11:00
+
+4
+Brasil 
+2019-01-01T11:30
+2019-01-01T13:00
+
+7
+Brasil
+
+4
+Paris
+2019-01-01T09:30
+2019-01-01T10:30
+
+6
+
+5
+Brasil
+2019-01-01T11:30
+2019-01-01T13:00
+
+6
+
+0
+
+***Saida 2***
+Salas disponiveis:
+Paris Hong Kong Brasil 
+
+Sala Hong Kong removido
+
+Salas disponiveis:
+Paris Brasil
+
+Sala nao existente no conjunto de Salas!
+
+Reserva 1:
+
+De 2019-01-01 às 10:30
+Até 2019-01-01 às 11:00
+
+Reserva 2:
+
+De 2019-01-01 às 11:30
+Até 2019-01-01 às 13:00
+
+Sala Brasil:
+
+De 2019-01-01 às 10:30
+Até 2019-01-01 às 11:00
+
+Sala Brasil:
+
+De 2019-01-01 às 11:30
+Até 2019-01-01 às 13:00
+
+Sala Paris:
+
+De 2019-01-01 às 09:30
+Até 2019-01-01 às 10:30
+
+Reserva removida com sucesso!
+
+Sala Brasil:
+
+De 2019-01-01 às 10:30
+Até 2019-01-01 às 11:00
+
+Sala Paris:
+
+De 2019-01-01 às 09:30
+Até 2019-01-01 às 10:30
+
+

@@ -17,10 +17,10 @@ public class Sala {
     public String getLocal() {
         return local;
     }
-    public String obs() {
+    public String getObs() {
         return obs;
     }
-    public int capacidade() {
+    public int getCapacidade() {
         return capacidade;
     }
 }
