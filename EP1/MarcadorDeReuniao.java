@@ -151,5 +151,7 @@ public class MarcadorDeReuniao {
 
         mdr.marcarReuniaoEntre(inicioDaReuniao, fimDaReuniao, participantes);
         mdr.mostraSobreposicao();
+
+        sc.close();
     } 
 }
